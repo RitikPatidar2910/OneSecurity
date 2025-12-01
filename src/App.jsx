@@ -90,21 +90,21 @@ export default function OneSecuritySolutionWebsite() {
   const pricing = [
     {
       title: "Starter Security Check",
-      price: "50 KD",
+      price: "500 KD",
       desc: "Mini scan + executive summary (ideal for small sites)",
       bullets: ["Basic web scan", "2-page summary", "Suggested fixes"],
       highlight: false
     },
     {
       title: "Professional VAPT",
-      price: "200 KD",
+      price: "Contact Us",
       desc: "Full web & network VAPT with remediation report",
       bullets: ["Threat & risk rating", "PoC examples", "Remediation guidance"],
       highlight: true
     },
     {
       title: "Enterprise Retainer",
-      price: "250 KD / mo",
+      price: "Contact Us",
       desc: "Managed security + monthly checks & priority support",
       bullets: ["Monthly scans", "On-call support", "SIEM tuning help"],
       highlight: false
