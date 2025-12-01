@@ -22,8 +22,55 @@ import {
   ArrowRight
 } from "lucide-react";
 
-export default function DeepVisionWebsite() {
+export default function OneSecuritySolutionWebsite() {
   const [menuOpen, setMenuOpen] = useState(false);
+  
+  // Form State
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  const [status, setStatus] = useState({
+    submitting: false,
+    succeeded: false,
+    errors: []
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ submitting: true, succeeded: false, errors: [] });
+
+    try {
+      const response = await fetch("https://formspree.io/f/xanzpzrg", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus({ submitting: false, succeeded: true, errors: [] });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const data = await response.json();
+        setStatus({ submitting: false, succeeded: false, errors: data.errors || ["Submission failed"] });
+      }
+    } catch (error) {
+      setStatus({ submitting: false, succeeded: false, errors: ["Network error"] });
+    }
+  };
 
   const services = [
     { name: "Web Application VAPT", icon: <Globe className="w-12 h-12 text-cyan-400" />, desc: "Comprehensive vulnerability assessment for web apps." },
@@ -65,9 +112,9 @@ export default function DeepVisionWebsite() {
   ];
 
   const contactInfo = {
-    phone: "+965-98935210",
-    email: "deep@ubgkw.com",
-    address: "Al Nafasi Tower, Kuwait City",
+    phone: "+91-9636357382",
+    email: "contact@onesecuritysolution.com",
+    address: "Panathur, Bangalore",
   };
 
   const scrollToSection = (id) => {
@@ -103,13 +150,11 @@ export default function DeepVisionWebsite() {
         className="max-w-7xl mx-auto p-6 flex items-center justify-between fixed top-0 left-0 right-0 z-50 bg-[#071021]/90 backdrop-blur-md border-b border-slate-800/50"
       >
         <div className="flex items-center gap-4 cursor-pointer" onClick={() => scrollToSection("home")}>
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-            <Shield className="w-6 h-6 text-white" />
-          </div>
+          <img src="/icon.png" alt="OneSecuritySolution Logo" className="w-12 h-12 rounded-lg object-contain bg-white/10 p-1" />
           <div>
-            <h1 className="text-xl font-bold tracking-tight">DeepVision Solution</h1>
+            <h1 className="text-xl font-bold tracking-tight">OneSecuritySolution</h1>
             <p className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">
-              Cybersecurity & Risk Management
+              Your Security is Our Service
             </p>
           </div>
         </div>
@@ -372,10 +417,10 @@ export default function DeepVisionWebsite() {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">About DeepVision</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-6">About OneSecuritySolution</h3>
               <div className="space-y-4 text-slate-400 leading-relaxed">
                 <p>
-                  DeepVision Solution is a premier cybersecurity consultancy based in Kuwait, dedicated to protecting businesses from the evolving landscape of digital threats.
+                  OneSecuritySolution is a premier cybersecurity consultancy based in Kuwait, dedicated to protecting businesses from the evolving landscape of digital threats.
                 </p>
                 <p>
                   Our team consists of certified ethical hackers, security researchers, and compliance experts who bring decades of combined experience to every engagement.
@@ -485,31 +530,93 @@ export default function DeepVisionWebsite() {
                 className="bg-[#0b1628] p-8 rounded-2xl border border-slate-800"
               >
                 <h4 className="text-xl font-semibold mb-6">Send us a message</h4>
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-slate-400">Name</label>
-                      <input type="text" className="w-full bg-[#071021] border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="John Doe" />
+                      <input 
+                        type="text" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-[#071021] border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors" 
+                        placeholder="John Doe" 
+                      />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-slate-400">Email</label>
-                      <input type="email" className="w-full bg-[#071021] border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="john@company.com" />
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-[#071021] border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors" 
+                        placeholder="john@company.com" 
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-slate-400">Subject</label>
-                    <input type="text" className="w-full bg-[#071021] border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Security Assessment Inquiry" />
+                    <input 
+                      type="text" 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-[#071021] border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors" 
+                      placeholder="Security Assessment Inquiry" 
+                    />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-slate-400">Message</label>
-                    <textarea className="w-full bg-[#071021] border border-slate-700 rounded-lg px-4 py-3 text-slate-100 h-32 focus:outline-none focus:border-cyan-500 transition-colors resize-none" placeholder="Tell us about your security needs..."></textarea>
+                    <textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-[#071021] border border-slate-700 rounded-lg px-4 py-3 text-slate-100 h-32 focus:outline-none focus:border-cyan-500 transition-colors resize-none" 
+                      placeholder="Tell us about your security needs..."
+                    ></textarea>
                   </div>
+
+                  {status.succeeded && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-sm flex items-center gap-2"
+                    >
+                      <CheckCircle className="w-4 h-4" />
+                      Message sent successfully! We'll get back to you soon.
+                    </motion.div>
+                  )}
+
+                  {status.errors.length > 0 && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm flex items-center gap-2"
+                    >
+                      <AlertTriangle className="w-4 h-4" />
+                      Something went wrong. Please try again later.
+                    </motion.div>
+                  )}
+
                   <motion.button 
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white py-3.5 rounded-lg font-bold shadow-lg shadow-cyan-500/25 transition-all duration-200 mt-2"
+                    disabled={status.submitting}
+                    className={`w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white py-3.5 rounded-lg font-bold shadow-lg shadow-cyan-500/25 transition-all duration-200 mt-2 flex items-center justify-center gap-2 ${status.submitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    Send Message
+                    {status.submitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
                   </motion.button>
                 </form>
               </motion.div>
@@ -521,11 +628,12 @@ export default function DeepVisionWebsite() {
       <footer className="bg-[#050c1a] border-t border-slate-800 py-12 mt-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <Shield className="w-6 h-6 text-cyan-500" />
-            <span className="font-bold text-lg">DeepVision Solution</span>
+            <img src="/icon.png" alt="OneSecuritySolution Logo" className="w-8 h-8 rounded object-contain bg-white/10 p-0.5" />
+
+            <span className="font-bold text-lg">OneSecuritySolution</span>
           </div>
           <div className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} DeepVision Solution. All rights reserved.
+            © {new Date().getFullYear()} OneSecuritySolution. All rights reserved.
           </div>
           <div className="flex gap-6 text-slate-400">
             <a href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</a>
