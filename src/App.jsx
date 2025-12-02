@@ -81,7 +81,6 @@ export default function OneSecuritySolutionWebsite() {
     { name: "Source Code Review", icon: <BookOpen className="w-12 h-12 text-teal-400" />, desc: "Manual and automated code analysis for security flaws." },
     { name: "Red Teaming", icon: <AlertTriangle className="w-12 h-12 text-red-500" />, desc: "Simulated real-world cyber attacks to test defenses." },
     { name: "Social Engineering", icon: <UserCheck className="w-12 h-12 text-orange-400" />, desc: "Phishing simulations and employee awareness testing." },
-    { name: "Security Hardening", icon: <Lock className="w-12 h-12 text-slate-400" />, desc: "System and server hardening based on CIS benchmarks." },
     { name: "SOC / SIEM Monitoring", icon: <Activity className="w-12 h-12 text-green-400" />, desc: "24/7 security monitoring and incident response." },
     { name: "Threat Intelligence", icon: <Shield className="w-12 h-12 text-yellow-400" />, desc: "Proactive threat hunting and intelligence gathering." },
     { name: "Cybersecurity Training", icon: <Award className="w-12 h-12 text-pink-400" />, desc: "Training for developers and staff on security best practices." },
