@@ -39,6 +39,8 @@ export default function OneSecuritySolutionWebsite() {
     errors: []
   });
 
+  const [hoveredNav, setHoveredNav] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -157,14 +159,50 @@ export default function OneSecuritySolutionWebsite() {
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
           {["Home", "Services", "Pricing", "About", "Contact"].map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollToSection(item.toLowerCase())}
-              className="hover:text-cyan-400 transition-colors duration-200 relative group"
+            <div 
+              key={item} 
+              className="relative py-4"
+              onMouseEnter={() => setHoveredNav(item)}
+              onMouseLeave={() => setHoveredNav(null)}
             >
-              {item}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
-            </button>
+              <button
+                onClick={() => scrollToSection(item.toLowerCase())}
+                className="hover:text-cyan-400 transition-colors duration-200 relative group"
+              >
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+              </button>
+
+              {/* Dropdown for Services */}
+              <AnimatePresence>
+                {item === "Services" && hoveredNav === "Services" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 w-72 p-2 bg-[#0b1628]/95 backdrop-blur-xl border border-slate-700 rounded-xl shadow-2xl flex flex-col gap-1 z-50"
+                  >
+                    {services.map((s) => (
+                      <div 
+                        key={s.name} 
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors cursor-pointer group/item" 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          scrollToSection("services");
+                          setHoveredNav(null);
+                        }}
+                      >
+                        <div className="p-2 rounded-md bg-cyan-500/10 text-cyan-400 group-hover/item:bg-cyan-500 group-hover/item:text-white transition-colors">
+                          {React.cloneElement(s.icon, { className: "w-5 h-5" })}
+                        </div>
+                        <span className="text-slate-200 font-medium text-sm group-hover/item:text-white">{s.name}</span>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </nav>
 
@@ -317,18 +355,18 @@ export default function OneSecuritySolutionWebsite() {
                   key={s.name}
                   variants={fadeInUp}
                   whileHover={{ y: -5 }}
-                  className="group bg-[#0b1628] hover:bg-[#0f1c30] p-6 rounded-xl border border-slate-800 hover:border-cyan-500/30 transition-all duration-300"
+                  className="group bg-[#0b1628] hover:bg-[#0f1c30] p-6 rounded-xl border border-slate-800 hover:border-cyan-500/30 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="mb-4 p-3 bg-[#071021] rounded-lg w-fit group-hover:scale-110 transition-transform duration-300 border border-slate-800">
-                    {s.icon}
+                    {React.cloneElement(s.icon, { className: "w-12 h-12 text-cyan-400" })}
                   </div>
-                  <h4 className="text-xl font-semibold mb-2 text-slate-100">{s.name}</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                  <h4 className="text-xl font-semibold mb-4 text-slate-100">{s.name}</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
                     {s.desc}
                   </p>
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="flex items-center gap-2 text-cyan-400 text-sm font-medium hover:gap-3 transition-all"
+                    className="flex items-center gap-2 text-cyan-400 text-sm font-medium hover:gap-3 transition-all mt-auto"
                   >
                     Get this service <ArrowRight className="w-4 h-4" />
                   </button>
