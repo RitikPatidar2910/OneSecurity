@@ -73,39 +73,36 @@ export default function OneSecuritySolutionWebsite() {
   };
 
   const services = [
-    { name: "Web Application VAPT", icon: <Globe className="w-12 h-12 text-cyan-400" />, desc: "Rigorous security testing covering OWASP Top 10, business logic errors, and API vulnerabilities to harden your web architecture." },
-    { name: "Network Penetration Testing", icon: <Server className="w-12 h-12 text-purple-400" />, desc: "Proactive testing to uncover hidden risks in your network perimeter and internal systems before they can be compromised by attackers." },
-    { name: "Mobile App Pentest", icon: <Smartphone className="w-12 h-12 text-blue-400" />, desc: "Ensure the integrity of your mobile applications with end-to-end testing of client-side code and backend server interactions." },
-    { name: "M365 Security Assessment", icon: <Cloud className="w-12 h-12 text-sky-400" />, desc: "Harden your M365 tenant against Business Email Compromise (BEC) and unauthorized access through detailed configuration audits.." },
-    { name: "API Security Testing", icon: <Code className="w-12 h-12 text-indigo-400" />, desc: "Secure your APIs against OWASP Top 10 threats." },
-    { name: "Source Code Review", icon: <BookOpen className="w-12 h-12 text-teal-400" />, desc: "Manual and automated code analysis for security flaws." },
-    { name: "Red Teaming", icon: <AlertTriangle className="w-12 h-12 text-red-500" />, desc: "Simulated real-world cyber attacks to test defenses." },
-    { name: "Social Engineering", icon: <UserCheck className="w-12 h-12 text-orange-400" />, desc: "Phishing simulations and employee awareness testing." },
-    { name: "SOC / SIEM Monitoring", icon: <Activity className="w-12 h-12 text-green-400" />, desc: "24/7 security monitoring and incident response." },
-    { name: "Threat Intelligence", icon: <Shield className="w-12 h-12 text-yellow-400" />, desc: "Proactive threat hunting and intelligence gathering." },
-    { name: "Cybersecurity Training", icon: <Award className="w-12 h-12 text-pink-400" />, desc: "Training for developers and staff on security best practices." },
+    { name: "Web Application VAPT", icon: <Globe className="w-12 h-12 text-cyan-400" />, desc: "We protect your business by simulating real-world cyberattacks on your web applications to uncover critical security vulnerabilities such as data leaks, broken authentication, and business logic errors—before hackers can exploit them. Our process goes beyond basic automated scanning to include deep manual analysis, resulting in a clear, actionable remediation roadmap. We provide your team with verified proof of every flaw, priority scoring based on risk, and precise code-level instructions, ensuring you have exactly what you need to fix issues rapidly and fortify your digital defense." },
+    { name: "Network Penetration Testing", icon: <Server className="w-12 h-12 text-purple-400" />, desc: "We fortify your organization’s backbone by conducting rigorous security assessments on your internal and external network infrastructure, identifying hidden risks such as unpatched servers, weak encryption, and open entry points that attackers target. Our experts simulate real-world intrusion attempts to validate these weaknesses, delivering a comprehensive report that provides your IT team with prioritized remediation steps and precise technical solutions to close security gaps, prevent unauthorized access, and ensure your critical systems remain resilient against compromise." },
+    { name: "Mobile App Pentest", icon: <Smartphone className="w-12 h-12 text-blue-400" />, desc: "We secure your mobile ecosystem by performing deep-dive security assessments on both iOS and Android applications, meticulously testing for vulnerabilities like insecure data storage, weak encryption, and unauthorized API access. By analyzing your app’s code and simulating real-world attacks on user devices, we uncover critical flaws that could lead to data theft or account takeovers. We then provide a detailed remediation guide with specific code fixes and configuration changes, enabling your developers to harden your app against reverse engineering and ensure safe, secure mobile experiences for your users." },
+    { name: "M365 Security Assessment", icon: <Cloud className="w-12 h-12 text-sky-400" />, desc: "We harden your corporate collaboration environment by conducting a comprehensive configuration review of your Microsoft 365 tenant, identifying critical security gaps in Exchange, SharePoint, Teams, and Entra ID that leave you vulnerable to Business Email Compromise and data leakage. Our experts analyze your specific settings against industry benchmarks to detect weak access controls and risky sharing permissions, delivering a prioritized remediation roadmap that allows your IT team to immediately implement strict identity protection policies and close entry points for attackers." },
+    { name: "API Security Testing", icon: <Code className="w-12 h-12 text-indigo-400" />, desc: "We protect the core of your application architecture by performing rigorous security testing on your REST and GraphQL APIs to identify critical vulnerabilities such as Broken Object Level Authorization (BOLA), injection attacks, and business logic flaws that standard scanners often miss. Our experts simulate sophisticated attacks to uncover unauthorized access points and data leakage risks, delivering a precise, developer-friendly remediation guide that enables your team to fix security gaps at the code level and ensure your backend integrations are immune to exploitation." },
+    { name: "Source Code Review", icon: <BookOpen className="w-12 h-12 text-teal-400" />, desc: "We strengthen your software security from the inside out by conducting a deep-dive analysis of your source code, combining automated scanning with expert manual review to identify critical flaws like hardcoded credentials, injection vulnerabilities, and insecure logic. Our process catches vulnerabilities early in the development lifecycle to minimize cost and risk, providing your engineers with precise remediation guidance and secure coding best practices to eliminate threats before your application ever goes live." },
+    { name: "Social Engineering Awareness Training", icon: <UserCheck className="w-12 h-12 text-orange-400" />, desc: "We transform your workforce into your strongest line of defense by conducting realistic phishing simulations and social engineering campaigns to identify employees susceptible to manipulation and fraud. Our approach goes beyond generic training by testing your team with up-to-date attack scenarios, delivering detailed risk metrics and targeted educational content that empowers your staff to recognize threats, thereby drastically reducing the risk of ransomware and data breaches caused by human error." },
+
   ];
 
   const pricing = [
     {
-      title: "Starter Security Check",
-      price: "500 KD",
-      desc: "Mini scan + executive summary (ideal for small sites)",
-      bullets: ["Basic web scan", "2-page summary", "Suggested fixes"],
+      title: "Starter Security Check (Vulnerability Assessment)",
+      price: "500-1000 KWD",
+      desc: "Assest Scan + executive summary (Ideal for small sites)",
+      bullets: ["Vulnerability Assessment", "summary of findings", "Suggested fixes"],
       highlight: false
     },
     {
-      title: "Professional VAPT",
-      price: "Contact Us",
-      desc: "Full web & network VAPT with remediation report",
-      bullets: ["Threat & risk rating", "PoC examples", "Remediation guidance"],
+      title: "Professional VA & PT",
+      price: "For Price Contact Us",
+      desc: "Detailed Web & Network VAPT with remediation report (Ideal for Medium & Large sites)",
+      bullets: ["Complete VAPT", "PoC examples", "Remediation guidance"],
       highlight: true
     },
     {
       title: "Enterprise Retainer",
-      price: "Contact Us",
-      desc: "Managed security + monthly checks & priority support",
-      bullets: ["Monthly scans", "On-call support", "SIEM tuning help"],
+      price: "For Price Contact Us",
+      desc: "Detailed Web & Network VAPT with remediation report + Quarterly & Half yearly checks & priority support",
+      bullets: ["Quarterly & Half yearly test", "On-call support", "Post Remediation Retest"],
       highlight: false
     },
   ];
@@ -149,10 +146,10 @@ export default function OneSecuritySolutionWebsite() {
         className="max-w-7xl mx-auto p-6 flex items-center justify-between fixed top-0 left-0 right-0 z-50 bg-[#071021]/90 backdrop-blur-md border-b border-slate-800/50"
       >
         <div className="flex items-center gap-4 cursor-pointer" onClick={() => scrollToSection("home")}>
-          <img src="/icon.png" alt="OneSecuritySolution Logo" className="w-12 h-12 rounded-lg object-contain bg-white/10 p-1" />
+          <img src="/icon.png" alt="ONE Security Solution Logo" className="w-12 h-12 rounded-lg object-contain bg-white/10 p-0.5" />
           <div>
-            <h1 className="text-xl font-bold tracking-tight">OneSecuritySolution</h1>
-            <p className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">
+            <h1 className="text-xl font-bold tracking-tight">One Security Solution</h1>
+            <p className="text-[12px] text-slate-400 uppercase tracking-wider font-semibold">
               Your Security is Our Service
             </p>
           </div>
@@ -219,22 +216,20 @@ export default function OneSecuritySolutionWebsite() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.3 }}
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wide"
             >
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              Now Available in Kuwait
+              We will Available soon in Kuwait
             </motion.div>
-            <h2 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-              Secure Your Digital <br />
+            <h2 className="text-2xl md:text-6xl font-extrabold leading-tight tracking-tight">
+              Discover, Exploit & Remediate <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
-                Infrastructure
+                Stay Secure
               </span>
             </h2>
             <p className="text-lg text-slate-400 max-w-xl leading-relaxed">
-              We secure modern businesses with focused penetration testing,
-              cloud audits, and managed threat detection. Rapid delivery, clear
-              remediation, and measurable risk reduction.
+              We help modern businesses uncover hidden vulnerabilities, assess real-world risks, and implement actionable fixes. With focused penetration testing, comprehensive cloud audits, and managed threat detection, we deliver rapid results, clear remediation, and measurable risk reduction—so your business can innovate confidently and securely.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <motion.button
@@ -274,15 +269,18 @@ export default function OneSecuritySolutionWebsite() {
                 <div className="flex gap-2">
                   <span className="text-green-400">➜</span>
                   <span className="text-cyan-300">~</span>
-                  <span className="text-slate-300">initiating deep_vision_scan...</span>
+                  <span className="text-cyan-500">Enumerations to exploit...</span>
                 </div>
-                <div className="text-slate-400 pl-4">Target: 192.168.1.X</div>
-                <div className="text-slate-400 pl-4">Ports: 80, 443, 8080</div>
-                <div className="text-yellow-400 pl-4">Warning: Vulnerability detected (CVE-2023-XXXX)</div>
-                <div className="text-slate-400 pl-4">Analyzing payload structure...</div>
-                <div className="text-green-400 pl-4">Scan complete. Report generated.</div>
+                <div className="text-slate-400 pl-4">Nmap -sV -sS -A 192.168.1.X .....</div>
+                <div className="text-slate-400 pl-4">Discovered Services: 80 (http), 443(https), 22(ssh)....</div>
+                <div className="text-yellow-400 pl-4">Warning: Vulnerable SSH version detected on port 22</div>
+                <div className="text-red-400 pl-4"> Metasploit Module...use auxiliary/scanner/ssh/ssh_enumusers...</div>
+                <div className="text-slate-400 pl-4">Set Rhost 192.168.1.X </div>
+                <div className="text-slate-400 pl-4">Set Rport 22 </div>
+                <div className="text-slate-400 pl-4">Exploit </div>
+                <div className="text-green-400 pl-4">Found ssh usernames internal-admin,sec-admin.... </div>
                 <div className="flex gap-2 mt-4 animate-pulse">
-                  <span className="text-green-400">➜</span>
+                  <span className="text-green-500">➜</span>
                   <span className="text-cyan-300">~</span>
                   <span className="w-2 h-5 bg-slate-500"></span>
                 </div>
@@ -303,8 +301,7 @@ export default function OneSecuritySolutionWebsite() {
             >
               <h3 className="text-3xl md:text-4xl font-bold mb-4">Our Expertise</h3>
               <p className="text-slate-400 text-lg">
-                We cover the full security lifecycle — from reconnaissance to
-                remediation and monitoring.
+                We deliver comprehensive penetration testing services, covering every phase from reconnaissance and attack surface mapping to exploitation, remediation support, and continuous security validation.
               </p>
             </motion.div>
             
@@ -377,7 +374,7 @@ export default function OneSecuritySolutionWebsite() {
                     </div>
                   )}
                   <h4 className="text-xl font-bold text-slate-100 mb-2">{plan.title}</h4>
-                  <div className="text-3xl font-extrabold text-white mb-4">{plan.price}</div>
+                  <div className="text-3xl font-bold text-white mb-4">{plan.price}</div>
                   <p className="text-slate-400 text-sm mb-6">{plan.desc}</p>
                   
                   <ul className="space-y-4 mb-8 flex-1">
@@ -399,7 +396,7 @@ export default function OneSecuritySolutionWebsite() {
                         : 'bg-slate-800 hover:bg-slate-700 text-slate-200'
                     }`}
                   >
-                    Choose Plan
+                    Contact Us
                   </motion.button>
                 </motion.div>
               ))}
@@ -416,23 +413,23 @@ export default function OneSecuritySolutionWebsite() {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">About OneSecuritySolution</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-6">About One Security Solution</h3>
               <div className="space-y-4 text-slate-400 leading-relaxed">
                 <p>
-                  OneSecuritySolution is a premier cybersecurity consultancy based in Kuwait, dedicated to protecting businesses from the evolving landscape of digital threats.
+                  OneSecuritySolution is Kuwait’s premier cybersecurity consultancy specializing in penetration testing, vulnerability assessments, and security advisory services. In today’s rapidly evolving digital landscape, cyber threats are becoming more sophisticated, and businesses face constant risks from attackers seeking to exploit system weaknesses.
                 </p>
                 <p>
                   Our team consists of certified ethical hackers, security researchers, and compliance experts who bring decades of combined experience to every engagement.
                 </p>
                 <p>
-                  We believe that security shouldn't be a blocker, but an enabler of innovation. By identifying vulnerabilities before malicious actors do, we give you the confidence to grow your business securely.
+                  We deliver more than reports, We provide strategic insights that translate technical findings into real business value. With OneSecuritySolution, penetration testing becomes an investment in your business’s security, resilience, and future success.
                 </p>
               </div>
               
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div className="p-4 bg-[#0b1628] rounded-lg border border-slate-800">
-                  <div className="text-3xl font-bold text-cyan-400 mb-1">500+</div>
-                  <div className="text-sm text-slate-500">Vulnerabilities Found</div>
+                  <div className="text-3xl font-bold text-cyan-400 mb-1">1000+</div>
+                  <div className="text-sm text-slate-500">Our Experts Have Discovered 1000+ Vulnerabilities Across Multiple Clients</div>
                 </div>
                 <div className="p-4 bg-[#0b1628] rounded-lg border border-slate-800">
                   <div className="text-3xl font-bold text-purple-400 mb-1">100%</div>
@@ -452,10 +449,10 @@ export default function OneSecuritySolutionWebsite() {
                 <h4 className="text-xl font-semibold mb-6">Why Choose Us?</h4>
                 <div className="space-y-6">
                   {[
-                    { title: "Certified Experts", desc: "OSCP, CISSP, and CEH certified professionals." },
-                    { title: "Detailed Reporting", desc: "Actionable insights, not just automated scan results." },
-                    { title: "Local Presence", desc: "Based in Kuwait with understanding of regional compliance." },
-                    { title: "Post-Fix Verification", desc: "We re-test to ensure vulnerabilities are truly fixed." }
+                    { title: "Certified Experts", desc: "We bring elite technical talent. Our engineers are OSCP and CEH certified, ensuring deep offensive knowledge and industry-standard testing for your organization." },
+                    { title: "Detailed Reporting", desc: "We move beyond automated noise to deliver manually validated, actionable reports. You get clear, evidence-backed insights and precise fixes that your team can implement immediately to resolve risks." },
+                    { title: "Local Presence", desc: "We are a Kuwait-based team dedicated to aligning your defenses with regional standards." },
+                    { title: "Post-Fix Verification", desc: "We double-check your defense. Once you patch, we re-test to guarantee the vulnerability is completely resolved." }
                   ].map((item, idx) => (
                     <div key={idx} className="flex gap-4">
                       <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-cyan-400 font-bold">
