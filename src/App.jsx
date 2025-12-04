@@ -73,9 +73,9 @@ export default function OneSecuritySolutionWebsite() {
   };
 
   const services = [
-    { name: "Web Application VAPT", icon: <Globe className="w-12 h-12 text-cyan-400" />, desc: "Comprehensive vulnerability assessment for web apps." },
-    { name: "Network Penetration Testing", icon: <Server className="w-12 h-12 text-purple-400" />, desc: "Identify weaknesses in your network infrastructure." },
-    { name: "Mobile App Pentest", icon: <Smartphone className="w-12 h-12 text-blue-400" />, desc: "Security testing for iOS and Android applications." },
+    { name: "Web Application VAPT", icon: <Globe className="w-12 h-12 text-cyan-400" />, desc: "Rigorous security testing covering OWASP Top 10, business logic errors, and API vulnerabilities to harden your web architecture." },
+    { name: "Network Penetration Testing", icon: <Server className="w-12 h-12 text-purple-400" />, desc: "Proactive testing to uncover hidden risks in your network perimeter and internal systems before they can be compromised by attackers." },
+    { name: "Mobile App Pentest", icon: <Smartphone className="w-12 h-12 text-blue-400" />, desc: "Ensure the integrity of your mobile applications with end-to-end testing of client-side code and backend server interactions." },
     { name: "Cloud Security Review", icon: <Cloud className="w-12 h-12 text-sky-400" />, desc: "AWS, Azure, and GCP security configuration reviews." },
     { name: "API Security Testing", icon: <Code className="w-12 h-12 text-indigo-400" />, desc: "Secure your APIs against OWASP Top 10 threats." },
     { name: "Source Code Review", icon: <BookOpen className="w-12 h-12 text-teal-400" />, desc: "Manual and automated code analysis for security flaws." },
