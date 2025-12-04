@@ -76,7 +76,7 @@ export default function OneSecuritySolutionWebsite() {
     { name: "Web Application VAPT", icon: <Globe className="w-12 h-12 text-cyan-400" />, desc: "Rigorous security testing covering OWASP Top 10, business logic errors, and API vulnerabilities to harden your web architecture." },
     { name: "Network Penetration Testing", icon: <Server className="w-12 h-12 text-purple-400" />, desc: "Proactive testing to uncover hidden risks in your network perimeter and internal systems before they can be compromised by attackers." },
     { name: "Mobile App Pentest", icon: <Smartphone className="w-12 h-12 text-blue-400" />, desc: "Ensure the integrity of your mobile applications with end-to-end testing of client-side code and backend server interactions." },
-    { name: "Cloud Security Review", icon: <Cloud className="w-12 h-12 text-sky-400" />, desc: "AWS, Azure, and GCP security configuration reviews." },
+    { name: "M365 Security Assessment", icon: <Cloud className="w-12 h-12 text-sky-400" />, desc: "Harden your M365 tenant against Business Email Compromise (BEC) and unauthorized access through detailed configuration audits.." },
     { name: "API Security Testing", icon: <Code className="w-12 h-12 text-indigo-400" />, desc: "Secure your APIs against OWASP Top 10 threats." },
     { name: "Source Code Review", icon: <BookOpen className="w-12 h-12 text-teal-400" />, desc: "Manual and automated code analysis for security flaws." },
     { name: "Red Teaming", icon: <AlertTriangle className="w-12 h-12 text-red-500" />, desc: "Simulated real-world cyber attacks to test defenses." },
